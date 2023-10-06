@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 const URL_REGEX =
-  /^((http(s?)?):\/\/)?([wW]{3}\.)?[a-zA-Z0-9\-.]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$/g;
+  /^((http(s?)?):\/\/)?([wW]{3}\.)?[a-zA-Z0-9\-.]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?((\/)?([a-zA-Z0-9\-.]+)?)+$/g;
 
 export const CreateShortenedUrlDto = z
   .object({

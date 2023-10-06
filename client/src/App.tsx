@@ -17,6 +17,18 @@ import Confetti from "react-confetti";
 import BoltIcon from "@mui/icons-material/Bolt";
 import { TModal } from "./types";
 
+declare module "@mui/material/Button" {
+  interface ButtonPropsColorOverrides {
+    pikayellow: true;
+  }
+}
+
+declare module "@mui/material/TextField" {
+  interface TextFieldPropsColorOverrides {
+    pikayellow: true;
+  }
+}
+
 function App() {
   const [url, setUrl] = React.useState<string>("");
   const [isSubmitting, setIsSubmitting] = React.useState<boolean>(false);
@@ -107,8 +119,8 @@ function App() {
           >
             MinifyURL
           </Typography>
-          <Typography variant="h5" gutterBottom>
-            Type in your URL and watch us magically shorten it!
+          <Typography variant="body1" gutterBottom>
+            Insert your URL. And we'll transform it.
           </Typography>
 
           <Container>
@@ -116,7 +128,11 @@ function App() {
               <Grid item xs={12} sm={12} md={9}>
                 {" "}
                 <TextField
-                  style={{ backgroundColor: "white", borderRadius: "4px" }}
+                  style={{
+                    backgroundColor: "white",
+                    borderRadius: "4px",
+                  }}
+                  color="pikayellow"
                   fullWidth
                   value={url}
                   placeholder="Enter a valid URL to shorten!"
@@ -136,7 +152,7 @@ function App() {
                 {" "}
                 <Button
                   className="Button"
-                  style={{ backgroundColor: "#5865f1" }}
+                  color="pikayellow"
                   variant="contained"
                   fullWidth
                   size="large"
@@ -150,11 +166,11 @@ function App() {
             </Grid>
           </Container>
           <Typography variant="subtitle1">
-            This is a free tool to shorten URLs and generate shorter links.
+            A free tool to generate shorter links.
           </Typography>
           <Typography variant="subtitle1">
-            A shorter URL makes it easier to share links without going over the
-            character limit, like on Twitter/X!
+            Easily keep to your minimum character limit and share
+            your minifyurl now.
           </Typography>
         </Stack>
         <MySnackbar
