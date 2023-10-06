@@ -14,6 +14,13 @@ import { TransitionProps } from "@mui/material/transitions";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { useSnackbarContext } from "../context/SnackbarContext";
 import { TModal } from "../types";
+import { theme } from "../context/ThemeContext";
+
+declare module "@mui/material/Button" {
+  interface ButtonPropsColorOverrides {
+    pikayellow: true;
+  }
+}
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -76,7 +83,12 @@ export default function MyDialog({
           </Stack>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleDialogClose}>Got It!</Button>
+          <Button
+            onClick={handleDialogClose}
+            sx={{ color: (theme) => `${theme.palette.pikayellow.dark}` }}
+          >
+            Got It!
+          </Button>
         </DialogActions>
       </Dialog>
     </div>

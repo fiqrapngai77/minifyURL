@@ -14,7 +14,7 @@ declare module "@mui/material/styles" {
   }
 }
 
-const theme = createTheme({
+export const theme = createTheme({
   palette: {
     pikayellow: {
       main: "#fcac15",
